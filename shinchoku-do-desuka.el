@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2014  
 
-;; Author:  <tatsuhiro@TATSUHIRO-PC>
+;; Author:  T. Ishida <toot.daiylfalaiydt@gmail.com>
 ;; Keywords: 
 
 ;; This program is free software; you can redistribute it and/or modify
