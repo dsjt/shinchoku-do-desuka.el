@@ -50,7 +50,7 @@
 (defvar shinchoku:window-config nil
   "window configration for shinchoku-do-desuka.el")
 (defvar shinchoku:keymap  (make-keymap))
-(defvar shinchoku:start-char (1+ (length shinchoku:default-message))
+(defvar shinchoku:sentence-point-min (1+ (length shinchoku:default-message))
   "shinchocku:start-char is a variable for trimming shinchoku sentences.")
 (defvar shinchoku:timer-object nil
   "When you want to cancel timer, cancel this object.
@@ -88,7 +88,7 @@ Actually, you should use shinchoku:kill-timer")
 
 (defun shinchoku:submit ()
   (interactive)
-  (write-region (concat (buffer-substring shinchoku:start-char (point-max))
+  (write-region (concat (buffer-substring shinchoku:sentence-point-min (point-max))
                         "\n\n")
                 nil shinchoku:default-memory-file t)
   (shinchoku:cancel))
