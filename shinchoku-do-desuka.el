@@ -32,7 +32,7 @@
 
 ;;; Code:
 
-(defcustom shinchoku:default-memory-file "~/.shinchoku"
+(defcustom shinchoku:default-memory-file "~/shinchoku.org"
   "Your shinchoku memorize in this file")
 
 (defcustom shinchoku:interval-min nil
@@ -41,10 +41,10 @@
 (defcustom shinchoku:reported-buffer "*shinchoku*"
   "The program asks you shinchoku in buffer named after this variable")
 
-(defvar shinchoku:default-message "ÈÄ≤Êçó„Å©„ÅÜ„Åß„Åô„Åã?
-## If you finish report, submit it by \"C-c C-c\".
-## If you cancel report, \"C-c C-k\". 
--------------------
+(defvar shinchoku:default-message "êiíªÇ«Ç§Ç≈Ç∑Ç©?
+# If you finish report, submit it by \"C-c C-c\".
+# If you cancel report, \"C-c C-k\". 
+#-------------------
 "
   "Default message displayed in shinchoku:reported-buffer.")
 (defvar shinchoku:window-config nil
@@ -80,7 +80,7 @@ Actually, you should use shinchoku:kill-timer")
     (shinchoku:prepare-buffer)))
 
 (defun shinchoku:prepare-buffer ()
-  (insert (concat shinchoku:default-message (format-time-string "[%Y/%m/%d %H:%M:%S]\n\n")))
+  (insert (concat shinchoku:default-message (format-time-string "** [%Y/%m/%d %H:%M:%S]\n\n")))
   (goto-char (point-max))
   (use-local-map shinchoku:keymap)
   (define-key (current-local-map) (kbd "C-c C-c") 'shinchoku:submit)
